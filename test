@@ -1,0 +1,9 @@
+
+class beauyengshin
+{
+  public static void main
+
+  {
+   System.out.print("Helo");
+  }
+}
