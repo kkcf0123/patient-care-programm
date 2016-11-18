@@ -1,0 +1,130 @@
+package smu.kim.reg;
+
+import java.awt.BorderLayout;
+
+import java.awt.Container;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.awt.Label;
+import java.awt.TextArea;
+import java.awt.TextField;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.nio.channels.SelectableChannel;
+import java.util.ArrayList;
+
+import javax.swing.*;
+
+class RegPatient extends JFrame implements ActionListener{
+
+//	private String name;
+//	private String gender;
+//	private int patientNum;
+//	private int pat_tel;
+//	private String mom_Name;
+//	private int mom_tel;
+//	private String speci;
+	
+	private JButton okBtn = new JButton("확인");
+    private JButton canBtn = new JButton("취소");
+	
+	   public static void main(String[] a){
+	      JFrame myFrame = new JFrame("신규");
+	      JPanel p = new JPanel();
+	      
+	      myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	      Container myPane = myFrame.getContentPane();
+	      myPane.setLayout(new FlowLayout());
+	      myPane.add(getFieldPanel());
+	      //myPane.add(getButtonPanel());
+	      
+	      p = getButtonPanel();
+	      
+	      p.setBounds(150, 60, 300, 300);
+	      
+	      myFrame.add(p);
+	      myFrame.setSize(350, 400);
+	      myFrame.setVisible(true);
+	   }
+	   
+	   private static JPanel getFieldPanel() {
+		   
+	      JPanel p = new JPanel(new GridLayout(7, 1));
+	      
+	      
+	      TextField name, gen, birth_date, phone; 
+	      TextArea spe;
+	      
+	      name = new TextField(16);
+	      birth_date = new TextField(16);
+	      phone = new TextField(16);
+	      p.setBorder(BorderFactory.createTitledBorder("완벽하게 기입해주세요"));
+	      
+	      p.add(new JLabel("이름:",SwingConstants.LEFT));	      
+	      p.add(new TextField(16));
+	      
+	      p.add(new JLabel("성별:",SwingConstants.LEFT));
+	      p.add(getSystemPanel());
+	      
+	      p.add(new JLabel("생년월일:",SwingConstants.LEFT));
+	      p.add(birth_date);
+	      
+	      p.add(new JLabel("전화번호:",SwingConstants.LEFT));
+	      p.add(phone);
+	      
+//	      p.add(new JLabel("보호자 성명:",SwingConstants.LEFT));
+//	      p.add(mom);
+//	      
+//	      p.add(new JLabel("보호자 연락처:",SwingConstants.LEFT));
+//	      p.add(momt);
+	      
+//	      p.add(new JLabel("특이사항", SwingConstants.LEFT));
+//	      p.add(new TextArea(5, 16));
+
+	      return p;
+	   }
+	   private static JPanel getButtonPanel() {
+	      JPanel p = new JPanel();
+	  
+	      p.add(new JButton("확인"));
+	      p.add(new JButton("취소"));
+
+	      return p;
+	   }
+	   
+	   private static JPanel getSystemPanel() {
+	      JRadioButton man = new JRadioButton("남",true);
+	      JRadioButton woman = new JRadioButton("여",false);
+	      ButtonGroup systemGroup = new ButtonGroup();
+	      systemGroup.add(man);
+	      systemGroup.add(woman);
+	      JPanel p = new JPanel(new GridLayout(1,2));
+	      p.add(man);
+	      p.add(woman);
+	      
+	      return p;
+	   }
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		Object obj = e.getSource();
+		
+		
+		
+	}
+	   
+	  
+	   
+	  
+//	   private static JPanel getLanguagePanel() {
+//	      JPanel p = new JPanel(new GridLayout(1,3));
+//	      p.add(new JCheckBox("Java",true));
+//	      p.add(new JCheckBox("C++",true));
+//	      p.add(new JCheckBox("Perl",false));
+//	      return p;
+//	   }
+}
+
