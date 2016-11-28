@@ -1,0 +1,92 @@
+package 오픈소스;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Button;
+import javax.swing.JButton;
+import javax.swing.JSplitPane;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JTextField;
+import javax.swing.BoxLayout;
+import java.awt.CardLayout;
+import java.awt.TextField;
+import java.awt.TextArea;
+import javax.swing.JEditorPane;
+import javax.swing.JLabel;
+
+public class ui extends JFrame {
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					ui frame = new ui();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public ui() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 666, 390);
+		getContentPane().setLayout(null);
+
+		Button button_1 = new Button("취소");
+		button_1.setBounds(345, 256, 188, 36);
+		getContentPane().add(button_1);
+
+		Button button = new Button("확인");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		button.setBounds(94, 256, 188, 36);
+		getContentPane().add(button);
+
+		TextField textField = new TextField();
+		textField.setBounds(31, 150, 576, 93);
+		getContentPane().add(textField);
+
+		TextField textField_1 = new TextField();
+		textField_1.setBounds(225, 50, 188, 44);
+		getContentPane().add(textField_1);
+
+		TextField textField_2 = new TextField();
+		textField_2.setBounds(419, 50, 188, 44);
+		getContentPane().add(textField_2);
+
+		TextField textField_3 = new TextField();
+		textField_3.setBounds(31, 50, 188, 44);
+		getContentPane().add(textField_3);
+
+		JLabel label = new JLabel("\uD658\uC790\uC774\uB984");
+		label.setBounds(66, 0, 120, 44);
+		getContentPane().add(label);
+
+		JLabel label_1 = new JLabel("\uC131\uBCC4");
+		label_1.setBounds(289, 0, 74, 44);
+		getContentPane().add(label_1);
+
+		JLabel label_2 = new JLabel("\uC0DD\uB144\uC6D4\uC77C");
+		label_2.setBounds(451, 0, 137, 44);
+		getContentPane().add(label_2);
+
+		JLabel label_3 = new JLabel("\uC811\uC218\uAE30\uB85D");
+		label_3.setBounds(257, 100, 137, 44);
+		getContentPane().add(label_3);
+	}
+}
