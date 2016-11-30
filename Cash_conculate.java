@@ -1,4 +1,4 @@
-package smu.example.mg;
+package smu.kim.reg;
 
 import java.awt.EventQueue;
 
@@ -10,6 +10,8 @@ import java.awt.FlowLayout;
 import javax.swing.JButton;
 import java.awt.GridBagConstraints;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.event.ActionEvent;
 import java.awt.Insets;
 import javax.swing.JLabel;
@@ -24,7 +26,6 @@ import javax.swing.JTextPane;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 
-import org.eclipse.wb.swing.FocusTraversalOnArray;
 import java.awt.Component;
 public class Cash_conculate {
 
@@ -56,7 +57,7 @@ public class Cash_conculate {
 
 	private void initialize() {
 		frame = new JFrame();
-		frame.setTitle("카드 결제");
+		frame.setTitle("현금 결제");
 		frame.setBounds(100, 100, 265, 180);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -70,9 +71,10 @@ public class Cash_conculate {
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
 		
-		JButton btnNewButton = new JButton("결 제");
+		JButton paymentBtn = new JButton("결 제");
 		
-		JButton btnNewButton_1 = new JButton("취 소");
+		JButton canBtn = new JButton("취 소");
+		
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -88,9 +90,9 @@ public class Cash_conculate {
 					.addContainerGap(24, Short.MAX_VALUE))
 				.addGroup(Alignment.TRAILING, groupLayout.createSequentialGroup()
 					.addGap(39)
-					.addComponent(btnNewButton)
+					.addComponent(paymentBtn)
 					.addPreferredGap(ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-					.addComponent(btnNewButton_1)
+					.addComponent(canBtn)
 					.addGap(48))
 		);
 		groupLayout.setVerticalGroup(
@@ -106,10 +108,45 @@ public class Cash_conculate {
 						.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addGap(18)
 					.addGroup(groupLayout.createParallelGroup(Alignment.BASELINE)
-						.addComponent(btnNewButton_1)
-						.addComponent(btnNewButton))
+						.addComponent(canBtn)
+						.addComponent(paymentBtn))
 					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 		frame.getContentPane().setLayout(groupLayout);
+		
+		paymentBtn.addMouseListener(new MouseListener() {
+			
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+				Conculate_pbill cp = new Conculate_pbill();
+				
+				cp.main(null);
+			}
+		});
 	}
 }

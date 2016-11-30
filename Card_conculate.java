@@ -1,4 +1,4 @@
-package smu.example.mg;
+package smu.kim.reg;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -6,6 +6,8 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -22,8 +24,8 @@ public class Card_conculate {
 	 */
 	private final JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 	private final JPanel panel = new JPanel();
-	private final JButton btnNewButton = new JButton("결 제");
-	private final JButton btnNewButton_1 = new JButton("취 소");
+	private final JButton paymentBut = new JButton("결 제");
+	private final JButton canBut = new JButton("취 소");
 	private final JPanel panel_1 = new JPanel();
 	private final JTextField textField = new JTextField(15);
 	private final JPanel panel_2 = new JPanel();
@@ -57,14 +59,14 @@ public class Card_conculate {
 		
 		frame.getContentPane().add(panel_2, BorderLayout.NORTH);
 		frame.getContentPane().add(panel, BorderLayout.SOUTH);
-		btnNewButton.addActionListener(new ActionListener() {
+		paymentBut.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
 		
-		panel.add(btnNewButton);
+		panel.add(paymentBut);
 		
-		panel.add(btnNewButton_1);
+		panel.add(canBut);
 		
 		frame.getContentPane().add(panel_1, BorderLayout.CENTER);
 		GridBagLayout gbl_panel_1 = new GridBagLayout();
@@ -80,6 +82,40 @@ public class Card_conculate {
 		gbc_textField.gridx = 1;
 		gbc_textField.gridy = 3;
 		panel_1.add(textField, gbc_textField);
+		
+		paymentBut.addMouseListener(new MouseListener() {
+			
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mousePressed(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseExited(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				// TODO Auto-generated method stub
+				Card_conculate_sign ccs = new Card_conculate_sign();
+				ccs.main(null);
+			}
+		});
 	}
 	
 }
